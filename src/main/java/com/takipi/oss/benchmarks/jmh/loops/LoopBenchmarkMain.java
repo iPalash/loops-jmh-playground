@@ -80,6 +80,15 @@ public class LoopBenchmarkMain {
 	public void iterateIntegerStreamToList() {
 		List<Integer> ls= IntStream.range(0,size).boxed().collect(Collectors.toList());
  	}
+    @Benchmark
+    @BenchmarkMode(Mode.AverageTime)
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    @Fork(2)
+    @Measurement(iterations = 5)
+    @Warmup(iterations = 5)
+    public void parallelIterateIntegerStreamToList() {
+        List<Integer> ls= IntStream.range(0,size).boxed().parallel().collect(Collectors.toList());
+    }
 
 
 
