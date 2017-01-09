@@ -181,11 +181,11 @@ public class LoopBenchmarkMain {
 	}
 
 }
-class MyConsumer implements Consumer<Integer>{
+
+class MyConsumer implements Consumer<Integer> {
 
     public void accept(Integer t) {
         System.out.println("Consumer impl Value::"+t);
     }
-
 
 }
